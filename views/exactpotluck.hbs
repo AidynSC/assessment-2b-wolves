@@ -4,6 +4,10 @@
 <h3>Time: {{hour}}:{{minute}}</h3>
 <h3>Host: {{potluck.host.username}}</h3>
 
+{{#each potluck.followers}}
+    <li>{{this.username}}</li>
+{{/each}}
+
 {{#if bool}}
     <form class="edit" method="get" action="/potlucks/{{potluck.name}}/edit">
         <input type="submit" value="edit" />
@@ -11,6 +15,22 @@
     <form class="deletePot" method="post">
         <input type="submit" value="delete" />
     </form>
+{{else}}
+    {{#if loggedin}}
+        {{#if bool2}}
+           <span> {{currentUser}} brings {{asd.bringing}} </span>
+        {{else}}
+
+        <form class="join" method="get" action="/potlucks/{{potluck.name}}/join">
+            <input type="submit" value="join!" />
+        </form>
+        {{/if}}
+    {{/if}}
+
 {{/if}}
 
+
+{{#each brings}}
+    <li>{{this.username}} brings {{this.bringing}}</li>
+{{/each}}
 
