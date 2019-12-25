@@ -1,0 +1,9 @@
+<h1>Upcoming Potlucks</h1>
+
+
+{{#each upcoming}}
+    <div>
+        <h3><a href="/potlucks/{{this.name}}">{{this.name}}</a></h3>
+        <span>{{this.date}} at {{this.location}}</span>
+    </div>
+{{/each}}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/application.js" defer></script>
+
+    <title>Document</title>
+</head>
+<body>
+{{#if loggedin}}
+    <form class="logout" method="POST" action="/logout">
+        <input class="loginButton" type="submit" value="Log Out" />
+    </form>
+    <form class="userid" method="get" action="/{{loggeduser}}">
+        <input class="signupButton" type="submit" value="{{loggeduser}}" />
+    </form>
+    <form class="party" method="get" action="/newpotluck">
+        <input class="signupButton" type="submit" value="host a potluck!" />
+    </form>
+{{else}}
+    <form class="loginBut" method="get" action="/login">
+        <input class="loginButton" type="submit" value="Log In" />
+    </form>
+    <form class="signupBut" method="get" action="/signup">
+        <input class="signupButton" type="submit" value="Sign Up" />
+    </form>
+{{/if}}
+{{{body}}}
+</body>
+</html>

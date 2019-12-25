@@ -1,0 +1,28 @@
+<div class="editing">
+
+</div>
+
+
+{{#if bool}}
+<div class="potluckedit">
+    <form method="POST" action="/potlucks/{{potluck.name}}">
+        <div>
+            <label>Name:</label>
+            <input class="editname" type="text" name="name" value="{{potluck.name}}"/>
+        </div>
+        <div>
+            <label>Location:</label>
+            <input class="editlocation" type="text" name="location" value="{{potluck.location}}"/>
+        </div>
+        <div>
+            <label>Date:</label>
+            <input class="editdate" type="datetime-local" name="date" value="{{potluck.date}}"/>
+        </div>
+        <div>
+            <input class="editpot" type="submit" value="edit"/>
+        </div>
+    </form>
+</div>
+{{else}}
+    <h1>Sorry, you can't edit this potluck!</h1>
+{{/if}}

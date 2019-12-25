@@ -1,0 +1,16 @@
+<h1>{{potluck.name}}</h1>
+<h3>Location: {{potluck.location}}</h3>
+<h3>Date: {{month}} {{day}}, {{year}}</h3>
+<h3>Time: {{hour}}:{{minute}}</h3>
+<h3>Host: {{potluck.host.username}}</h3>
+
+{{#if bool}}
+    <form class="edit" method="get" action="/potlucks/{{potluck.name}}/edit">
+        <input type="submit" value="edit" />
+    </form>
+    <form class="deletePot" method="post">
+        <input type="submit" value="delete" />
+    </form>
+{{/if}}
+
+
