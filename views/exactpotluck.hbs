@@ -3,7 +3,7 @@
 <h3>Date: {{month}} {{day}}, {{year}}</h3>
 <h3>Time: {{hour}}:{{minute}}</h3>
 <h3>Host: {{potluck.host.username}}</h3>
-
+<h2>Participants</h2>
 {{#each potluck.followers}}
     <li>{{this.username}}</li>
 {{/each}}
@@ -18,7 +18,8 @@
 {{else}}
     {{#if loggedin}}
         {{#if bool2}}
-           <span> {{currentUser}} brings {{asd.bringing}} </span>
+            <h1>You bring:</h1>
+            <span> <b>{{asd.bringing}}</b> </span>
         {{else}}
 
         <form class="join" method="get" action="/potlucks/{{potluck.name}}/join">
@@ -29,7 +30,7 @@
 
 {{/if}}
 
-
+<h1>Bring stuff</h1>
 {{#each brings}}
     <li>{{this.username}} brings {{this.bringing}}</li>
 {{/each}}
